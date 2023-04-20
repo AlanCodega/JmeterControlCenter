@@ -1,7 +1,10 @@
 FROM python:3.6-stretch
 
 RUN apt-get update && \
-	git clone https://github.com/innogames/JMeter-Control-Center.git
+	git clone https://github.com/innogames/JMeter-Control-Center.git && \
+	cd JMeter-Control-Center && \
+	git reset --hard 683ec5893b380e109c8971765374076406cef3f9 && \
+	cd ..
 	
 EXPOSE 8888/tcp
 	
